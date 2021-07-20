@@ -1,0 +1,32 @@
+<!-- @format -->
+
+<html>
+  <head>
+    <title>Firebase-Okta Auth app</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+    <script
+      src="https://global.oktacdn.com/okta-signin-widget/4.1.1/js/okta-sign-in.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://global.oktacdn.com/okta-signin-widget/4.1.1/css/okta-sign-in.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="authenticated-user-content" hidden="">
+      <h2>Authenticated with Firebase</h2>
+      <p id="user-info"></p>
+      <button onclick="firebaseLogout();">Sign out</button>
+    </div>
+    <div id="signin-widget" hidden=""></div>
+
+    <!-- Custom JS scripts -->
+    <script src="/assets/js/scripts.js" async=""></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "test-app",
+  "version": "1.0.0",
+  "description": "Firebase-Okta Auth app",
+  "main": "server.js",
+  "author": "Kolesnyk B.",
+  "engines": {
+    "node": ">=14.15.4 =<14.17.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "dependencies": {
+    "@okta/jwt-verifier": "^2.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.11.0",
+    "firebase-functions": "^3.14.1",
+    "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.6"
+  }
+}
