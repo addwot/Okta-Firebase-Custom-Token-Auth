@@ -1,6 +1,6 @@
 /** @format */
 
-const CORS_ORIGIN = "http://localhost:3000";
+const CORS_ORIGIN = "*";
 
 // Set cors
 const cors = require("cors")({ origin: CORS_ORIGIN });

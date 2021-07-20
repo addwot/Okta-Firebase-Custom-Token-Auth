@@ -3,7 +3,7 @@
 // Config vars
 const OKTA_ORG_URL = "https://dev-41458117.okta.com";
 const OKTA_CLIENT_ID = "0oa19wdci44lPtB9j5d7";
-const CUSTOM_TOKEN_ENDPOINT = "http://localhost:3000/api/firebaseCustomToken";
+const CUSTOM_TOKEN_ENDPOINT = "/api/firebaseCustomToken";
 
 (async () => {
   // Firebase configuration
@@ -23,7 +23,6 @@ const CUSTOM_TOKEN_ENDPOINT = "http://localhost:3000/api/firebaseCustomToken";
 
   const oktaSignIn = new OktaSignIn({
     baseUrl: OKTA_ORG_URL,
-    //   redirectUri: "http://localhost:3000/login/callback",
     redirectUri: window.location.url,
     authParams: {
       display: "page",
