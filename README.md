@@ -22,6 +22,11 @@ To run as dev, run the following:
 1. `yarn` - install node modules
 2. `yarn run dev` - run server.js with nodemon
 
+or 
+
+1. `npm i` - install node modules
+2. `npm run dev` - run server.js with nodemon
+
 ## Process
 
 1. Login with Okta credentials

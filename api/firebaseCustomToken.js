@@ -6,13 +6,15 @@ const router = express.Router();
 // Determine middlewares
 const { oktaAuth } = require("../middleware/oktaAuth");
 const { cors } = require("../middleware/cors");
+const { gapisConfig } = require("../config/serviceAccountKey");
 
 const firebaseAdmin = require("firebase-admin");
+
 
 // Initialize Firebase app
 const firebaseApp = firebaseAdmin.initializeApp({
   credential: firebaseAdmin.credential.cert(
-    require("../config/serviceAccountKey.json")
+    gapisConfig
   ),
 });
 
