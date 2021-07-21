@@ -5,11 +5,13 @@
   "main": "server.js",
   "author": "Kolesnyk B.",
   "engines": {
-    "node": ">=14.15.4 =<14.17.0"
+    "node": "14.x",
+    "yarn": "1.x"
+
   },
   "license": "MIT",
   "scripts": {
-    "start": "node server",
+    "start": "node server.js",
     "dev": "nodemon server"
   },
   "dependencies": {
