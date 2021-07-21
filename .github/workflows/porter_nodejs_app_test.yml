@@ -31,15 +31,15 @@ jobs:
       id: docker_build_push
       run: |2
 
-        export $(echo "${{secrets.ENV_CUSTOM_TOKEN_AUTH}}" | xargs)
-        echo "${{secrets.ENV_CUSTOM_TOKEN_AUTH}}" > ./env_porter
+        export $(echo "${{secrets.ENV_NODEJS_APP_TEST}}" | xargs)
+        echo "${{secrets.ENV_NODEJS_APP_TEST}}" > ./env_porter
         sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
         sudo apt-get update
         sudo apt-get install pack-cli
-        sudo pack build registry.digitalocean.com/trends-cluster-8991/custom-token-auth-default:$(git rev-parse --short HEAD) --path ./ --builder heroku/buildpacks:18 --env-file ./env_porter
-        sudo docker push registry.digitalocean.com/trends-cluster-8991/custom-token-auth-default:$(git rev-parse --short HEAD)
+        sudo pack build registry.digitalocean.com/trends-cluster-8991/nodejs-app-test-default:$(git rev-parse --short HEAD) --path ./ --builder heroku/buildpacks:18 --env-file ./env_porter
+        sudo docker push registry.digitalocean.com/trends-cluster-8991/nodejs-app-test-default:$(git rev-parse --short HEAD)
     - name: Deploy on Porter
       id: deploy_porter
       run: |2
 
-        curl -X POST "https://dashboard.getporter.dev/api/webhooks/deploy/${{secrets.WEBHOOK_CUSTOM_TOKEN_AUTH}}?commit=$(git rev-parse --short HEAD)"
+        curl -X POST "https://dashboard.getporter.dev/api/webhooks/deploy/${{secrets.WEBHOOK_NODEJS_APP_TEST}}?commit=$(git rev-parse --short HEAD)"
